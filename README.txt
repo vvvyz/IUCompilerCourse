@@ -24,13 +24,13 @@
  (showName :s 5.67)
  (showName :s "hello, World")
  
-   
+ -----------------------------
  (typename (:T Any))
  (define self
-  (fun ([:x T] [-> Void])
+  (fun ([:x T] [-> T])
    a))
  
  (add :x 2)
  (add :x "hello")
  (add :x "ccc")
- (add :x (fun ([:x Int]) x))
+ (add :x (fun ([:x Int] [=> Int]) x))
