@@ -1,5 +1,4 @@
-the first commit
-
+-------some-----------------------
 (define add
  (fun ([:a Int] [–> (Int –> Int)]))
   (fun (b) 
@@ -16,6 +15,22 @@ the first commit
  ------------parameter------------
  ------------subtype--------------
  (typename (:T Show))
- (define add
-  (fun ([:a T] [-> Void])
+ (define showName
+  (fun ([:s T] [-> Void])
    (print a)))
+ 
+ 
+ (showName :s 1)
+ (showName :s 5.67)
+ (showName :s "hello, World")
+ 
+   
+ (typename (:T Any))
+ (define self
+  (fun ([:x T] [-> Void])
+   a))
+ 
+ (add :x 2)
+ (add :x "hello")
+ (add :x "ccc")
+ (add :x (fun ([:x Int]) x))
