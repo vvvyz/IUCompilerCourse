@@ -12,3 +12,10 @@ the first commit
 
 (record A
  (:a Int 2))
+ 
+ ------------parameter------------
+ ------------subtype--------------
+ (typename (:T Show))
+ (define add
+  (fun ([:a T] [-> Void])
+   (print a)))
