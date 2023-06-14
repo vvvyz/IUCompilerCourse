@@ -1,12 +1,12 @@
--------some-----------------------
+------------some-------------------
 (define add
  (fun ([:a Int] [–> (Int –> Int)]))
-  (fun (b) 
+  (fun (b) -----what the type?
    (+ a b)))
    
 (define add
  (fun ([:a Int 2] [–> Int]))
-  (fun (b) 
+  (fun (b) ---what the type?
    (+ a b)) 1)
 
 (record A
