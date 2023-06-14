@@ -1,1 +1,41 @@
+(declare [X :type Bool])
 
+(declare [x :type Char])
+
+(declare [x :type Int])
+(declare [y :type Word])
+
+(declare [x :type Rational])
+(declare [y :type String])
+
+(declare [x :type [Int]])
+
+(declare [x :type (Int Int) -> (Int)])
+
+-----------ploymorphic function------------
+-----------ploymorphic
+(define fst
+  (fun ([a b] [-> a.type])))
+  
+------------constrained
+(typename (:T Floadable))
+(define length
+  (fun ([:a T] [-> T])))
+
+(define head
+  (fun ([array] [-> array.type])))
+
+(typename (:T Num))
+(define add
+  (fun ([:x T])
+    (+ x 1)))
+
+(add :x 1.0)
+(add :x 1.2)
+(add :x 1.3)
+(add :y 1.0)
+
+----------type synonym-----------------
+(type RGB [Int Int Int])
+(type ID Int)
+(type BookName String)
