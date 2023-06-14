@@ -16,7 +16,10 @@
 -----------ploymorphic
 (define fst
   (fun ([a b] [-> a.type])))
-  
+
+-----------subtype-----------------
+(define fst
+  (fun ([:a (Int (a < 2))])))
 ------------constrained
 (typename (:T Floadable))
 (define length
