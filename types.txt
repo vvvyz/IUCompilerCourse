@@ -39,3 +39,13 @@
 (type RGB [Int Int Int])
 (type ID Int)
 (type BookName String)
+
+
+(typename (:a Eq))
+(define add
+  (fun ([:b Int] [-> Int])))
+
+---what is the a?--------------
+(Class Eq a
+  [== :type [(a a) -> Bool]]
+  [/= :type [(a a) -> Bool]])
