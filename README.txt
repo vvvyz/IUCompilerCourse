@@ -25,10 +25,9 @@
  (showName :s "hello, World")
  
  -----------------------------
- (typename (:T Any))
- (define self
-  (fun ([:x T] [-> T])
-   a))
+ (define add
+  (fun (x)
+   x))
  
  (add :x 2)
  (add :x "hello")
