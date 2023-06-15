@@ -5,5 +5,19 @@
  (define call-bar
   (fun ([:y Int] [-> Int])
     (cond 
-      ([< y 4] (bar 4)) --bar可以从这里推断出(bar 4)是可以安全调用的
+      ([< y 4] (bar 4)) --bar可以从(< y 4), 这里推断出(bar 4)是可以安全调用的
       [else (bar 5)])))
+      
+
+(record B
+  [:b Int]
+  [:c Int])
+
+(record A (B)
+  [:a Int])
+
+(define bar
+  (fun ([:x B] [-> A])
+    (x.a)))
+
+(bar :x (B :x))
