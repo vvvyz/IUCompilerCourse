@@ -52,3 +52,9 @@
 (Class Eq a
   [== :type [(a a) -> Bool]]
   [/= :type [(a a) -> Bool]])
+  
+---curry function----------------
+(define add
+  (fun ([:a Int] [:b Int] [-> (Int -> Int)])
+    (fun (c)
+      (+ a (+ b c)))))
