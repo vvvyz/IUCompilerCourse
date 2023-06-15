@@ -17,3 +17,9 @@
     (cond
       ((n > 0) n)
       (else (- n)))))
+
+(define $
+  (fun ([f x])
+    (f x)))
+
+($ f x)
