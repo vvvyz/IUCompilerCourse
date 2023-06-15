@@ -1,0 +1,19 @@
+(define isTwo
+  (fun ([:a Int] [-> Bool])
+    (if (eq? x 2)
+      True
+      Fasle)))
+ 
+(define month
+  (fun ([:a Int] [-> Int])
+    (case n
+      ((1) 31)
+      ((2) 28)
+      ((9) 50))))
+ 
+ (typename [a :class (U Ord Num)])
+ (define abs
+  (fun ([:a T] [:b T] [-> a.type])
+    (cond
+      ((n > 0) n)
+      (else (- n)))))
