@@ -1,35 +1,3 @@
-------------some-------------------
-(define add
- (fun ([:a Int] [–> (Int –> Int)]))
-  (fun (b) -----what the type?
-   (+ a b)))
-   
-(define add
- (fun ([:a Int 2] [–> Int]))
-  (fun (b) ---what the type?
-   (+ a b)) 1)
-
-(record A
- (:a Int 2))
- 
- ------------parameter------------
- ------------subtype--------------
- (typename (:T Show))
- (define showName
-  (fun ([:s T] [-> Void])
-   (print a)))
- 
- 
- (showName :s 1)
- (showName :s 5.67)
- (showName :s "hello, World")
- 
- -----------------------------
- (define add
-  (fun (x)
-   x))
- 
- (add :x 2)
- (add :x "hello")
- (add :x "ccc")
- (add :x (fun ([:x Int] [=> Int]) x))
+- 正确的模型
+- 语义明确
+- 优雅的语法
