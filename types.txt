@@ -30,7 +30,7 @@
 
 (typename (:T Num))
 (define add
-  (fun ([:x T])
+  (fun ([:x T] [-> T])
     (+ x 1)))
 
 (add :x 1.0)
