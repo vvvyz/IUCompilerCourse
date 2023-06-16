@@ -37,6 +37,53 @@ search a xs | m < a = search a behind
 运算符可能有三种属性, 分别是优先级, 结合性和位置
 ```
 
+定义下一个数据结构
+```haskell
+data Bool = False 
+        | True
+    deriving(Show, Eq, Ord, Enum)
+
+--通过这个类型你就可以实现一些东西
+    
+data Day = Mon | Tue | Wed | Thu | Fri | Sat | Sun
+    deriving(Show, Eq, Ord, Enum)
+
+--使用模式匹配
+tomorrow :: Day -> Day
+tomorrow Mon = Tue
+tomorrow Tue = Wed
+tomorrow Wed = Thu
+tomorrow Thu = Fri
+tomorrow Fri = Sat
+tomorrow Sat = Sun
+tomorrow Sun = Mon
+
+--实现了枚举类型类Enum后, 有很多函数可以立即使用
+--比如使用succ, pred以及其他的函数
+tom :: Day -> Day
+tom Sun = Mon
+tom d = succ d
+
+
+yes :: Day -> Day
+yes Mon = Sun
+yes d = pred d
+
+--还有一个函数叫做read, 比如read "Mon"::Day
+data () = ()
+
+--定义一种类型作为参数
+type Name = String
+type Author = String
+type ISBN = String
+type Price = Float
+
+data Book = Book Name Author ISBN Price deriving(Show, Eq)
+
+--这样就需要使用一些访问器去访问, 就像这样
+name (Book n _ _ _) = n
+author (Book _ a _ _) = a
+```
 
 
 常见list操作函数说明
