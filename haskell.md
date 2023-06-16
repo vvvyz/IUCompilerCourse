@@ -1,3 +1,4 @@
+关于递归缓存的简单优化
 ```haskell
 --求列表的和
 --total :: [Int] -> Int
@@ -16,6 +17,15 @@ total xs = totalx xs 0
 ```
 
 
+常见操作符简单说明
+```haskell
+可以将一些二元函数用反单引号来转化成为参数中间的运算符号
+比如 4 `div` 2 表示 div 4 2
+```
+
+
+
+常见list操作函数说明
 ```haskell
 null 判断一个列表是否为空
 length函数返回列表的长度
