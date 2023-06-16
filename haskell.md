@@ -85,6 +85,32 @@ name (Book n _ _ _) = n
 author (Book _ a _ _) = a
 ```
 
+定义一下数据结构并优化访问器
+```haskell
+--访问器被称之为字段
+data Book = Book
+    { name   :: Name
+    , author :: Author
+    , isbn   :: ISBN
+    , price  :: Price
+    }
+
+
+incrisePrice :: ([Book], [Book]) -> Book -> Float -> ([Book], [Book])
+incrisePrice (b1, b2) b pri = 
+    ((b : b1), Book (name b) (author b) (isbn b) (price b + pri))
+
+--使用下面这种定义, 进行模式匹配
+incrisePrice (b1 b2) (Book nm ath isbn prc) pri =
+    ((Book nm ath isbn prc) : b1, 
+     (Book nm ath isbn (prc + pri)) : b2)
+
+--这个东西就和临时变量的作用是相同的
+incrisePrice (b1 b2) b@(Book nm ath isbn prc) pri =
+    (b : b1, (Book nm ath isbn (prc + pri)) : b2)
+```
+
+
 
 常见list操作函数说明
 ```haskell
