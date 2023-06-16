@@ -14,6 +14,15 @@ totalx (x : xs) n = totalx xs $! (n + x)
 
 total :: [Int] -> Int
 total xs = totalx xs 0
+
+使用haskell实现二分查找
+
+search :: (Ord a) => a -> [a] -> Bool
+search a [] = False
+search a xs | m < a = search a behind
+            | m > a = search a front
+            | otherwise = True
+            where (front, m : behind) = splitAt (length xs `div` 2) xs
 ```
 
 
