@@ -44,3 +44,12 @@ splitAt : 在列表中使用这个进行分隔
 repeat True : 在列表中重复无数次
 replicate 3 True ：在列表中重复3次
 ```
+
+
+关于Y不动点的讨论
+在正统的Lambda演算中函数全部是没有名字的, 因此是无法通过递归函数去实现的
+```haskell
+fib x | x > 0  =  x * fib(n - 1)
+      | x == 0 =  1
+```
+
