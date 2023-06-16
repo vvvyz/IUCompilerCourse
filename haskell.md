@@ -23,6 +23,10 @@ search a xs | m < a = search a behind
             | m > a = search a front
             | otherwise = True
             where (front, m : behind) = splitAt (length xs `div` 2) xs
+
+--函数作为值返回
+(|>) :: b -> (b -> c) -> c
+(|>) = fiip($)
 ```
 
 
