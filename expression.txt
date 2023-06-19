@@ -28,7 +28,8 @@
 (define add
   (fun (f b)
    (f b)))
-   
+
+---在这里进行证明
 (add (assert (:f (Int –> Int)) 
              (:a Int)) 
              addInt 2)
