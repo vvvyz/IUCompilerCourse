@@ -6,7 +6,7 @@
  
 (define month
   (fun ([:a Int] [-> Int])
-    (case n
+    (case n    --注意这里是有有一个常量的值的
       ((1) 31)
       ((2) 28)
       ((9) 50))))
@@ -14,9 +14,9 @@
  (typename [a :class (U Ord Num)])
  (define abs
   (fun ([:a T] [:b T] [-> a.type])
-    (cond
+    (cond       --但是在这里是没有常量的值的
       ((n > 0) n)
-      (else (- n)))))
+      (else (- n 1)))))
 
 ----------poly------------
 (define $
