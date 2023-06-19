@@ -2,10 +2,7 @@
   (fun ([:x (Int (< x 5))] [-> Int])
     x))
     
- (define bar
-    (fun ([:x [Int | (< x 5]] [-> Int]))])))   
-    
- 
+  
  (define call-bar
   (fun ([:y Int] [-> Int])
     (cond 
