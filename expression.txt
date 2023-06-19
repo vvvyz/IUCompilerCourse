@@ -33,3 +33,15 @@
 (add (assert (:f (Int –> Int)) 
              (:a Int)) 
              addInt 2)
+
+----------------------------
+(define gold
+  (fun (x)
+    x))
+
+(define bar
+  (fun (z)
+    (gold (assert (goldbach-conjecture x))
+      (gold z))))
+ 
+ (bar (assume (goldbazh-conjecture z)) (bar 2))
