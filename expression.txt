@@ -24,3 +24,11 @@
     (f x)))
 
 ($ f x)
+
+(define add
+  (fun (f b)
+   (f b)))
+   
+(add (assert (:f (Int –> Int)) 
+             (:a Int)) 
+             addInt 2)
