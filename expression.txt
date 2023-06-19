@@ -29,7 +29,7 @@
   (fun (f b)
    (f b)))
 
----在这里进行证明
+-----------------这里进行证明
 (add (assert (:f (Int –> Int)) 
              (:a Int)) 
              addInt 2)
@@ -37,11 +37,10 @@
 ----------------------------
 (define gold
   (fun (x)
+    (assert (goldbach-conjecture x))
     x))
 
 (define bar
   (fun (z)
-    (gold (assert (goldbach-conjecture x))
-      (gold z))))
- 
- (bar (assume (goldbazh-conjecture z)) (bar 2))
+    (gold (assume (goldbach-conjecture x))
+          (gold z))))
