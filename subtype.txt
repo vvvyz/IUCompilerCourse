@@ -2,12 +2,16 @@
   (fun ([:x (Int (< x 5))] [-> Int])
     x))
     
+ (define bar
+    (fun ([:x [Int | (< x 5]] [-> Int]))])))   
+    
+ 
  (define call-bar
   (fun ([:y Int] [-> Int])
     (cond 
       ([< y 4] (bar 4)) --bar可以从(< y 4), 这里推断出(bar 4)是可以安全调用的
       [else (bar 5)])))
-      
+     
 
 (record B
   [:b Int]
