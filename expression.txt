@@ -2,8 +2,10 @@
   (fun ([:a Int] [-> Bool])
     (if (eq? x 2)
       True
-      Fasle)))
- 
+      False)))
+
+
+
 (define month
   (fun ([:a Int] [-> Int])
     (case n    --注意这里是有有一个常量的值的
@@ -44,3 +46,8 @@
   (fun (z)
     (gold (assume (goldbach-conjecture x))
           (gold z))))
+
+(define bar
+  (fun (z)
+    (print z)
+    (Resut A)))
