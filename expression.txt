@@ -51,3 +51,31 @@
   (fun (z)
     (print z)
     (Resut A)))
+
+----是否在函数参数列表中加入模式匹配
+def add(:addone, a) do
+	a + 1
+end
+
+add(:addone, 1)
+
+#这样的不可以, 因为不匹配
+add(:addTwo, 2) 
+
+add函数有两个参数第一个参数是
+:addone 是一个值
+a是一个变量
+
+### 感觉这种不太好
+### 1. 参数既可以绑定到变量上
+### 2. 参数也可以是与值或符号进行匹配
+
+
+def print_multiple_times(msg, n) do
+   if n == 0 do
+      :ok
+   else
+     print n
+     print_multiple_times(msg, n - 1)
+  end
+end
